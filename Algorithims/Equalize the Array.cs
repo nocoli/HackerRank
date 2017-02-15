@@ -8,10 +8,13 @@ class Solution {
         string[] a_temp = Console.ReadLine().Split(' ');
         int[] a = Array.ConvertAll(a_temp, int.Parse);
         
-        int[] mostOccured = new int[2];
+        // the most occured
+        int mostOccured = 0;
         
+        // variable used to hold how many times an int has occured
         int timesOccured = 0;
         
+        // temp int value holder
         int tempInt;
         
         // find most occuring number + how many times it occurs
@@ -25,12 +28,15 @@ class Solution {
                 }
             }
             
-            if (timesOccured > mostOccured[1]) {
-                mostOccured[0] = tempInt;
-                mostOccured[1] = timesOccured;
+            // if new int has occured more times than the previous most occuring int
+            // then set a new most occured
+            if (timesOccured > mostOccured) {
+                mostOccured = timesOccured;
             }
         }
         
-        Console.WriteLine(a.Length - mostOccured[1]);
+        // print how many characters would need to be deleted to make all of the
+        // ints in the array equal to the same value
+        Console.WriteLine(a.Length - mostOccured);
     }
 }
