@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+
+    static void Main(String[] args) {
+        int q = Convert.ToInt32(Console.ReadLine());
+        for(int a0 = 0; a0 < q; a0++){
+            string s = Console.ReadLine();
+            // your code goes here
+            bool inOrder = true;
+            bool doubleInOrder = true;
+            bool tripleInOrder = true;
+            
+            
+            // if there is only one digit, print no
+            if (s.Length <= 1) {
+                Console.WriteLine("NO");
+            }
+            
+            // if starts with a 0
+            else if (s[0] == 0) {
+                Console.WriteLine("NO");
+            }
+            
+            else {
+                
+                if (s.Contains('9') && s[s.Length-1] != '9') {
+                string[] numbers = s.Split("9");
+                Console.WriteLine(numbers);
+                }
+                
+                /*
+                
+                // check for single digit continuation
+                for (int i = 0; i < s.Length-1; i++) {
+                    if (Convert.ToInt32(s[i]) + 1 == Convert.ToInt32(s[i+1])) {
+                        
+                    }
+                    else {
+                        inOrder = false;
+                    }
+                }
+                
+                // check for double digit continuation
+                if (!inOrder) {
+                for (int j = 0; j < s.Length-3; j=j+2) {
+                    if (Convert.ToInt32((s[j]) + (s[j+1])) == Convert.ToInt32(s[j+2] + s[j+3]) + 1) {
+                        
+                    }
+                    else {
+                        doubleInOrder = false;
+                    }
+                }
+                }
+                
+                // check 9,10,11
+                if (!inOrder && !doubleInOrder) {
+                for (int k = 0; k < s.Length-1; k++) {
+                    if (Convert.ToInt32(s[i]) + 1 == Convert.ToInt32(s[i+1])) {
+                        
+                    }
+                    else if (Convert.ToInt32(s[i]) == "9") {
+                        
+                    }
+                    else {
+                        inOrder = false;
+                    }
+                }
+                }
+                
+                
+                
+                
+                // print output
+                if (inOrder) {
+                    Console.WriteLine("YES " + s[0]);
+                }
+                else if (doubleInOrder) {
+                    Console.WriteLine("YES " + s[0] + s[1]);
+                }
+                else {
+                    Console.WriteLine("NO");
+                }
+                
+                */
+            }
+        }
+    }
+}
